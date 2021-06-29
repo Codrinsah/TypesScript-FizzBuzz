@@ -1,36 +1,36 @@
-import * as readline from 'readline'
+import * as readline from 'readline';
 
 function printNumbers(limit: number): void {
     for (const value of Array(limit).fill(0).map((_, index) => index + 1)) {
-        printValue(value)
+        printValue(value);
     }
 }
 
 function printValue(value: number) {
-    let reprez: String[] = []
+    let reprez: String[] = [];
 
     if (value % 3 == 0) {
-        reprez.push("Fizz")
+        reprez.push("Fizz");
     }
     if (value % 5 == 0) {
-        reprez.push("Buzz")
+        reprez.push("Buzz");
     }
     if (value % 7 == 0) {
-        reprez.push("Bang")
+        reprez.push("Bang");
     }
     if (value % 11 == 0) {
-        reprez = ["Bong"]
+        reprez = ["Bong"];
     }
     if (value % 13 == 0) {
-        const firstPozB = reprez.findIndex((value) => value[0] == "B")
-        reprez.splice(firstPozB, 0, "Fezz")
+        const firstPozB = reprez.findIndex((value) => value[0] == "B");
+        reprez.splice(firstPozB, 0, "Fezz");
     }
     if (value % 17 == 0) {
-        reprez = reprez.reverse()
+        reprez = reprez.reverse();
     }
 
     if (reprez.length == 0) {
-        console.log(value)
+        console.log(value);
     } else {
         console.log(reprez.join(""));
     }
@@ -41,6 +41,13 @@ const reader = readline.createInterface({
     output: process.stdout
 })
 reader.question("Please input the limit of the program\n", (value) => {
-    printNumbers(parseInt(value))
-    reader.close()
+    printNumbers(parseInt(value));
+
+    reader.question("Please specify which rules you want to apply. Examples: \n" +
+        "all\n" +
+        "none\n" +
+        "3\n" +
+        "3, 5, 13", (value) => {
+        // TODO
+    })
 })
