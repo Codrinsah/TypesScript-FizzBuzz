@@ -5,14 +5,19 @@ function printNumbers(limit: number): void {
 }
 
 function printValue(value: number) {
-    if (value % 15 == 0) {
-        console.log("FizzBuzz")
-    } else if (value % 5 == 0) {
-        console.log("Buzz")
-    } else if (value % 3 == 0) {
-        console.log("Fizz")
-    } else {
+    let reprez: String[] = []
+
+    if (value % 3 == 0) {
+        reprez.push("Fizz")
+    }
+    if (value%5 == 0) {
+        reprez.push("Buzz")
+    }
+
+    if (reprez.length == 0) {
         console.log(value)
+    } else {
+        console.log(reprez.join(""));
     }
 }
 
