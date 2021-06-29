@@ -10,11 +10,14 @@ function printValue(value: number) {
     if (value % 3 == 0) {
         reprez.push("Fizz")
     }
-    if (value%5 == 0) {
+    if (value % 5 == 0) {
         reprez.push("Buzz")
     }
-    if (value%7 == 0) {
+    if (value % 7 == 0) {
         reprez.push("Bang")
+    }
+    if (value % 11 == 0) {
+        reprez = ["Bong"]
     }
 
     if (reprez.length == 0) {
