@@ -1,3 +1,5 @@
+import * as readline from 'readline'
+
 function printNumbers(limit: number): void {
     for (const value of Array(limit).fill(0).map((_, index) => index + 1)) {
         printValue(value)
@@ -34,4 +36,11 @@ function printValue(value: number) {
     }
 }
 
-printNumbers(100)
+const reader = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+reader.question("Please input the limit of the program\n", (value) => {
+    printNumbers(parseInt(value))
+    reader.close()
+})
