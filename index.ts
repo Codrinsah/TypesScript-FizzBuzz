@@ -23,6 +23,9 @@ function printValue(value: number) {
         const firstPozB = reprez.findIndex((value) => value[0] == "B")
         reprez.splice(firstPozB, 0, "Fezz")
     }
+    if (value % 17 == 0) {
+        reprez = reprez.reverse()
+    }
 
     if (reprez.length == 0) {
         console.log(value)
