@@ -13,6 +13,9 @@ function printValue(value: number) {
     if (value%5 == 0) {
         reprez.push("Buzz")
     }
+    if (value%7 == 0) {
+        reprez.push("Bang")
+    }
 
     if (reprez.length == 0) {
         console.log(value)
