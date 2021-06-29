@@ -19,6 +19,10 @@ function printValue(value: number) {
     if (value % 11 == 0) {
         reprez = ["Bong"]
     }
+    if (value % 13 == 0) {
+        const firstPozB = reprez.findIndex((value) => value[0] == "B")
+        reprez.splice(firstPozB, 0, "Fezz")
+    }
 
     if (reprez.length == 0) {
         console.log(value)
